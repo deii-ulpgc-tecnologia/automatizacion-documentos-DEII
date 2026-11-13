@@ -14,11 +14,11 @@ def docx_process(delegate_list, tpl_route, dest_directory, firmante):
         doc = DocxTemplate(tpl_route)
 
         context = {
-            "nombre": deleg.name,
-            "apellidos": deleg.surname,
-            "fecha_larga": dt.datetime.today().strftime("%d de %B de %Y"),
-            "fecha_corta": dt.datetime.today().strftime("%d-%m-%Y"),
-            "firmante": firmante
+            "{nombre}": deleg.name,
+            "{apellidos}": deleg.surname,
+            "{fecha_larga}": dt.datetime.today().strftime("%d de %B de %Y"),
+            "{fecha_corta}": dt.datetime.today().strftime("%d-%m-%Y"),
+            "{firmante}": firmante
             }
 
         doc.render(context)
